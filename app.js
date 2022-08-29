@@ -42,3 +42,12 @@ app.get('/',(req,res)=>{
 app.listen(port,()=>{
     console.log("Server started at PORT: "+ port);
 });
+// Serve static assets if in production
+if (process.env.NODE_ENV === 'production') {
+    // Set static folder
+    app.use(express.static('front/build'));
+  
+    app.get('*', (req, res) => {
+      res.sendFile(path.resolve(__dirname, 'front', 'build', 'index.html'));
+    });
+  }
