@@ -4,7 +4,7 @@ const tableDataSchema = new mongoose.Schema({
     companyDrive: {type:String,required:true},
     companyName: {type:String,required:true},
     companyLogo: {type:String},
-    companyCategory: {type:String,required:true},
+    companyCategory: {type:String},
     role: {type:String},
     jobLocation: {type:String},
     salary: {type:String},
