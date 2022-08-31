@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
 const tableDataSchema = new mongoose.Schema({
-    companyDrive: {type:String,required:true},
-    companyName: {type:String,required:true},
+    companyDrive: {type:String},
+    companyName: {type:String},
     companyLogo: {type:String},
     companyCategory: {type:String},
     role: {type:String},
@@ -13,7 +13,7 @@ const tableDataSchema = new mongoose.Schema({
     degree: {type:String},
     batch: {type:String},
     experience: {type:String},
-    applyLink: {type:String,required:true},
+    applyLink: {type:String},
     postedDate: {type:String,required:true},
     description:[{heading:{type:String},para:{type:String}}],
     keywords:[{type:String}]
