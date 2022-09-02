@@ -37,6 +37,7 @@ route.post('/data',(req,res,next)=>{
         batch: req.body.batch,
         experience: req.body.experience,
         applyLink: req.body.applyLink,
+        foundLink: req.body.foundLink,
         postedDate: postedDate,
         description:req.body.description,
     });
@@ -91,6 +92,7 @@ route.put('/data/:_id',async(req,res,next)=>{
     const {batch}= req.body;
     const {experience}= req.body;
     const {applyLink}= req.body;
+    const {foundLink}= req.body;
     const postedDate= datetime.toISOString().slice(0,10);
     const {description}= req.body;
     
@@ -118,7 +120,7 @@ route.put('/data/:_id',async(req,res,next)=>{
     keywordArray = keywordArray.concat(arr);
     const keywords=keywordArray;
     const newTableData = {
-        companyDrive, companyName, companyLogo, companyCategory, role, jobLocation, salary, interviewLocation, lastDate, degree, batch, experience, applyLink, postedDate, description, keywords
+        companyDrive, companyName, companyLogo, companyCategory, role, jobLocation, salary, interviewLocation, lastDate, degree, batch, experience, applyLink, foundLink, postedDate, description, keywords
     };
     TableData.findByIdAndUpdate(_id, newTableData,
         (err,updateTable) =>{
